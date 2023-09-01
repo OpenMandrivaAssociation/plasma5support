@@ -1,6 +1,6 @@
 %define libname %mklibname KF6Plasma5Support
 %define devname %mklibname KF6Plasma5Support -d
-%define git 20230521
+%define git 20230901
 
 Name: kf6-plasma5support
 Version: 5.240.0
@@ -75,8 +75,6 @@ Migration aids for KF5 -> KF6 migration
 
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/plasma5support.*
-%{_datadir}/kservicetypes6/plasma5support-dataengine.desktop
-%{_datadir}/kservicetypes6/plasma5support-service.desktop
 %{_datadir}/plasma5support
 
 %files -n %{devname}
