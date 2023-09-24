@@ -1,6 +1,6 @@
 %define libname %mklibname KF6Plasma5Support
 %define devname %mklibname KF6Plasma5Support -d
-%define git 20230918
+%define git 20230924
 
 Name: kf6-plasma5support
 Version: 5.240.0
