@@ -1,11 +1,11 @@
 %define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
-%define libname %mklibname KF6Plasma5Support
-%define devname %mklibname KF6Plasma5Support -d
+%define libname %mklibname Plasma5Support
+%define devname %mklibname Plasma5Support -d
 #define git 20231104
 
 Name: kf6-plasma5support
-Version: 5.91.0
+Version: 5.92.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/plasma5support/-/archive/master/plasma5support-master.tar.bz2#/plasma5support-%{git}.tar.bz2
@@ -84,10 +84,10 @@ Migration aids for KF5 -> KF6 migration
 %{_datadir}/plasma5support
 
 %files -n %{devname}
-%{_includedir}/KF6/*
-%{_libdir}/cmake/KF6Plasma5Support
-%{_qtdir}/doc/KF6Plasma5Support.*
+%{_includedir}/Plasma5Support
+%{_libdir}/cmake/Plasma5Support
+%{_qtdir}/doc/Plasma5Support.*
 
 %files -n %{libname}
-%{_libdir}/libKF6Plasma5Support.so*
+%{_libdir}/libPlasma5Support.so*
 %{_qtdir}/qml/org/kde/plasma/plasma5support
