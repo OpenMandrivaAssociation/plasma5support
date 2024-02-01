@@ -5,7 +5,7 @@
 #define git 20231104
 
 Name: kf6-plasma5support
-Version: 5.92.0
+Version: 5.93.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/plasma5support/-/archive/master/plasma5support-master.tar.bz2#/plasma5support-%{git}.tar.bz2
