@@ -3,11 +3,11 @@
 %define libname %mklibname Plasma5Support
 %define devname %mklibname Plasma5Support -d
 #define git 20240222
-%define gitbranch Plasma/6.0
+%define gitbranch Plasma/6.1
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: kf6-plasma5support
-Version: 6.0.5
+Version: 6.1.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/plasma5support/-/archive/%{gitbranch}/plasma5support-%{gitbranchd}.tar.bz2#/plasma5support-%{git}.tar.bz2
@@ -43,6 +43,9 @@ BuildRequires: doxygen
 BuildRequires: cmake(Qt6ToolsTools)
 BuildRequires: cmake(Qt6)
 Requires: %{libname} = %{EVRD}
+BuildSystem: cmake
+BuildOption: -DBUILD_QCH:BOOL=ON
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 Migration aids for KF5 -> KF6 migration
@@ -65,22 +68,6 @@ Development files (Headers etc.) for %{name}.
 
 Migration aids for KF5 -> KF6 migration
 
-%prep
-%autosetup -p1 -n plasma5support-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
-%find_lang %{name} --all-name --with-qt --with-html
-
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/plasma5support.*
 %{_datadir}/plasma5support
@@ -93,3 +80,4 @@ Migration aids for KF5 -> KF6 migration
 %files -n %{libname}
 %{_libdir}/libPlasma5Support.so*
 %{_qtdir}/qml/org/kde/plasma/plasma5support
+%{_qtdir}/plugins/plasma5support
