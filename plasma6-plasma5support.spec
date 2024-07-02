@@ -7,7 +7,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: kf6-plasma5support
-Version: 6.1.1
+Version: 6.1.2
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/plasma5support/-/archive/%{gitbranch}/plasma5support-%{gitbranchd}.tar.bz2#/plasma5support-%{git}.tar.bz2
