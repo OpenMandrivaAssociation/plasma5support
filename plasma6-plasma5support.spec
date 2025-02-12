@@ -41,6 +41,8 @@ BuildRequires: cmake(KF6Service)
 BuildRequires: cmake(KF6XmlGui)
 BuildRequires: cmake(KF6Notifications)
 BuildRequires: cmake(KF6IdleTime)
+BuildRequires: cmake(KF6NetworkManagerQt)
+BuildRequires: cmake(PlasmaActivities)
 BuildRequires: cmake(KSysGuard)
 BuildRequires: doxygen
 BuildRequires: cmake(Qt6ToolsTools)
