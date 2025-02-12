@@ -40,6 +40,7 @@ BuildRequires: cmake(KF6Package)
 BuildRequires: cmake(KF6Service)
 BuildRequires: cmake(KF6XmlGui)
 BuildRequires: cmake(KF6Notifications)
+BuildRequires: cmake(KF6IdleTime)
 BuildRequires: cmake(KSysGuard)
 BuildRequires: doxygen
 BuildRequires: cmake(Qt6ToolsTools)
