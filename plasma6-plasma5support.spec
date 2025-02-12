@@ -7,7 +7,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: kf6-plasma5support
-Version: 6.2.5
+Version: 6.3.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/plasma5support/-/archive/%{gitbranch}/plasma5support-%{gitbranchd}.tar.bz2#/plasma5support-%{git}.tar.bz2
@@ -76,10 +76,12 @@ Migration aids for KF5 -> KF6 migration
 
 %files -n %{devname}
 %{_includedir}/Plasma5Support
+%{_includedir}/plasma/geolocation
 %{_libdir}/cmake/Plasma5Support
 %{_qtdir}/doc/Plasma5Support.*
 
 %files -n %{libname}
 %{_libdir}/libPlasma5Support.so*
+%{_libdir}/libplasma-geolocation-interface.so*
 %{_qtdir}/qml/org/kde/plasma/plasma5support
 %{_qtdir}/plugins/plasma5support
