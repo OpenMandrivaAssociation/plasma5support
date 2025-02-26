@@ -48,6 +48,7 @@ BuildRequires: doxygen
 BuildRequires: cmake(Qt6ToolsTools)
 BuildRequires: cmake(Qt6)
 BuildRequires: pkgconfig(xfixes)
+BuildRequires: pkgconfig(xkbcommon)
 Requires: %{libname} = %{EVRD}
 BuildSystem: cmake
 BuildOption: -DBUILD_QCH:BOOL=ON
