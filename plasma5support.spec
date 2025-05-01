@@ -6,9 +6,9 @@
 %define gitbranch Plasma/6.1
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Name: kf6-plasma5support
+Name: plasma5support
 Version: 6.3.4
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/plasma5support/-/archive/%{gitbranch}/plasma5support-%{gitbranchd}.tar.bz2#/plasma5support-%{git}.tar.bz2
 %else
@@ -53,6 +53,8 @@ Requires: %{libname} = %{EVRD}
 BuildSystem: cmake
 BuildOption: -DBUILD_QCH:BOOL=ON
 BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+# Renamed 2025-05-02 after 6.0
+%rename kf6-plasma5support
 
 %description
 Migration aids for KF5 -> KF6 migration
