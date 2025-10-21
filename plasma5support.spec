@@ -7,7 +7,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: plasma5support
-Version: 6.4.5
+Version: 6.5.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/plasma5support/-/archive/%{gitbranch}/plasma5support-%{gitbranchd}.tar.bz2#/plasma5support-%{git}.tar.bz2
@@ -80,15 +80,20 @@ Migration aids for KF5 -> KF6 migration
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/plasma5support.*
 %{_datadir}/plasma5support
+%dir %{_datadir}/plasma/weather_legacy
+%{_datadir}/plasma/weather_legacy/noaa_station_list.xml
 
 %files -n %{devname}
 %{_includedir}/Plasma5Support
+%{_includedir}/plasma5support
 %{_includedir}/plasma/geolocation
 %{_libdir}/cmake/Plasma5Support
 %{_qtdir}/doc/Plasma5Support.*
+%{_libdir}/libweather_ion.so
 
 %files -n %{libname}
 %{_libdir}/libPlasma5Support.so*
 %{_libdir}/libplasma-geolocation-interface.so*
+%{_libdir}/libweather_ion.so.*
 %{_qtdir}/qml/org/kde/plasma/plasma5support
 %{_qtdir}/plugins/plasma5support
