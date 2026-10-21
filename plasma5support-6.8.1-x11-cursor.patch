@@ -62,7 +62,7 @@ diff -ruN a/src/dataengines/mouse/cursornotificationhandler.cpp b/src/dataengine
 +#include "cursornotificationhandler.h"
 +
 +#include <QGuiApplication>
-+#include <QNativeInterface>
++#include <QtGui/qguiapplication_platform.h>
 +
 +#include <X11/extensions/Xfixes.h>
 +#include <xcb/xfixes.h>
