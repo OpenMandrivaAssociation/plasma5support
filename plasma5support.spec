@@ -8,12 +8,14 @@
 
 Name: plasma5support
 Version: 6.8.1
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/plasma5support/-/archive/%{gitbranch}/plasma5support-%{gitbranchd}.tar.bz2#/plasma5support-%{git}.tar.bz2
 %else
 Source0: http://download.kde.org/%{stable}/plasma/%{version}/plasma5support-%{version}.tar.xz
 %endif
+# Restore the XFixes cursor-name source in the mouse engine. It is created only on X11.
+Patch0: plasma5support-6.8.1-x11-cursor.patch
 Summary: Migration aids for KF5 -> KF6 migration
 URL: https://invent.kde.org/plasma/plasma5support
 License: CC0-1.0 LGPL-2.0+ LGPL-2.1 LGPL-3.0
@@ -49,7 +51,9 @@ BuildRequires: cmake(KSysGuard)
 BuildRequires: doxygen
 BuildRequires: cmake(Qt6ToolsTools)
 BuildRequires: cmake(Qt6)
+BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xfixes)
+BuildRequires: pkgconfig(xcb)
 BuildRequires: pkgconfig(xkbcommon)
 Requires: %{libname} = %{EVRD}
 BuildSystem: cmake
